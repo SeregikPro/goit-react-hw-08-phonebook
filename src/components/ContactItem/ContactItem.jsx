@@ -1,6 +1,6 @@
 import Button from 'components/Button';
 import PropTypes from 'prop-types';
-import { Box } from 'components/Box';
+import Box from 'components/Box';
 import { Name, Number } from './ContactItem.styled';
 
 const ContactItem = ({ id, name, phone, deleteContact }) => {

@@ -5,14 +5,20 @@ import {
   typography,
   layout,
   flexbox,
+  grid,
   border,
+  shadow,
 } from 'styled-system';
 
-export const Box = styled('div')(
+const Box = styled('div')(
   space,
   color,
   typography,
   layout,
   flexbox,
-  border
+  grid,
+  border,
+  shadow
 );
+
+export default Box;

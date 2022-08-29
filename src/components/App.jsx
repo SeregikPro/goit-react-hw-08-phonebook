@@ -1,44 +1,20 @@
-import React, { useEffect } from 'react';
-import { Box } from './Box';
-import ContactList from './ContactList';
-import ContactForm from './ContactForm';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/contactOperations';
-import { getContacts } from 'redux/contactSelectors';
-import Filter from './Filter';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './Layout';
+import { lazy } from 'react';
+
+const Register = lazy(() => import('pages/Register'));
+const Login = lazy(() => import('pages/Login'));
+const Contacts = lazy(() => import('pages/Contacts'));
 
 const App = () => {
-  const dispatch = useDispatch();
-
-  const contacts = useSelector(getContacts);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" p={5}>
-      <h1>Phonebook</h1>
-      <Box
-        width="300px"
-        textAlign="center"
-        border="normal"
-        borderColor="accent"
-        borderRadius="normal"
-        p={4}
-      >
-        <ContactForm />
-      </Box>
-      {contacts.length > 0 ? (
-        <Box width="300px">
-          <h2>Contacts</h2>
-          <Filter />
-          <ContactList />
-        </Box>
-      ) : (
-        <h2>Contact list is empty</h2>
-      )}
-    </Box>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
+        <Route path="contacts" element={<Contacts />} />
+      </Route>
+    </Routes>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Box } from 'components/Box';
+import Box from 'components/Box';
 import ContactItem from 'components/ContactItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeContact } from 'redux/contactOperations';
