@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
 import { lazy } from 'react';
 
-const Register = lazy(() => import('pages/Register'));
-const Login = lazy(() => import('pages/Login'));
-const Contacts = lazy(() => import('pages/Contacts'));
+const Register = lazy(() => import('pages/RegisterPage'));
+const Login = lazy(() => import('pages/LoginPage'));
+const Contacts = lazy(() => import('pages/ContactsPage'));
 
 const App = () => {
   return (

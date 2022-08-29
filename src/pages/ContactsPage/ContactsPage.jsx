@@ -4,10 +4,10 @@ import ContactList from 'components/ContactList';
 import ContactForm from 'components/ContactForm';
 import Filter from 'components/Filter';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/contactOperations';
-import { getContacts } from 'redux/contactSelectors';
+import { fetchContacts } from 'redux/contacts/contactOperations';
+import { getContacts } from 'redux/contacts/contactSelectors';
 
-const Contacts = () => {
+const ContactsPage = () => {
   const dispatch = useDispatch();
 
   const contacts = useSelector(getContacts);
@@ -42,4 +42,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default ContactsPage;
