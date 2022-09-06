@@ -1,11 +1,11 @@
 import Box from 'components/Box';
 import ContactItem from 'components/ContactItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeContact } from 'redux/contacts/contactOperations';
-import { getContacts } from 'redux/contacts/contactSelectors';
+import { removeContact } from 'redux/contacts/contactsOperations';
+import { getContacts } from 'redux/contacts/contactsSelectors';
 import { getFilter } from 'redux/filter/filterSlice';
 
-const ContactList = () => {
+const ContactsList = () => {
   const dispatch = useDispatch();
 
   const contacts = useSelector(getContacts);
@@ -21,13 +21,13 @@ const ContactList = () => {
 
   return (
     <Box display="flex" flexDirection="column" p="0px" as="ul">
-      {filteredContacts.map(({ id, name, phone }) => {
+      {filteredContacts.map(({ id, name, number }) => {
         return (
           <ContactItem
             key={id}
             id={id}
             name={name}
-            phone={phone}
+            number={number}
             deleteContact={deleteContact}
           />
         );
@@ -36,4 +36,4 @@ const ContactList = () => {
   );
 };
 
-export default ContactList;
+export default ContactsList;

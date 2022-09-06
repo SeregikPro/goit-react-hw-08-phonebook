@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import Box from 'components/Box';
-import ContactList from 'components/ContactList';
+import ContactList from 'components/ContactsList';
 import ContactForm from 'components/ContactForm';
 import Filter from 'components/Filter';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/contacts/contactOperations';
-import { getContacts } from 'redux/contacts/contactSelectors';
+import { fetchContacts } from 'redux/contacts/contactsOperations';
+import { getContacts } from 'redux/contacts/contactsSelectors';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
