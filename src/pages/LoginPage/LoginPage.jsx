@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import Box from 'components/Box';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const styles = {
   form: {
@@ -39,7 +40,11 @@ const LoginPage = () => {
 
   return (
     <Box>
-      <h1>Страница логина</h1>
+      <HelmetProvider>
+        <Helmet>
+          <title>Login page</title>
+        </Helmet>
+      </HelmetProvider>
 
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
         <label style={styles.label}>

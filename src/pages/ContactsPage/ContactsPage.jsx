@@ -3,6 +3,7 @@ import Box from 'components/Box';
 import ContactList from 'components/ContactsList';
 import ContactForm from 'components/ContactForm';
 import Filter from 'components/Filter';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/contactsOperations';
 import { getContacts } from 'redux/contacts/contactsSelectors';
@@ -18,6 +19,12 @@ const ContactsPage = () => {
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center" p={5}>
+      <HelmetProvider>
+        <Helmet>
+          <title>Contacts page</title>
+        </Helmet>
+      </HelmetProvider>
+
       <h1>Phonebook</h1>
       <Box
         width="300px"
