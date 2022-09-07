@@ -3,17 +3,8 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Box from 'components/Box';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import Button from '@mui/material/Button';
+import { TextField } from '@mui/material';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
@@ -42,41 +33,72 @@ const RegisterPage = () => {
     setPassword('');
   };
   return (
-    <Box>
+    <Box display="flex" justifyContent="center">
       <HelmetProvider>
         <Helmet>
           <title>Register page</title>
         </Helmet>
       </HelmetProvider>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
+      <Box
+        as="form"
+        display="flex"
+        alignItems="center"
+        flexDirection="column"
+        width="320px"
+        onSubmit={handleSubmit}
+        autoComplete="off"
+      >
+        <TextField
+          id="name"
+          label="Name"
+          variant="outlined"
+          margin="normal"
+          helperText="Please enter your name"
+          fullWidth
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleChange}
+        />
 
-        <label style={styles.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
+        <TextField
+          id="email"
+          label="E-mail"
+          variant="outlined"
+          margin="normal"
+          helperText="Please enter your e-mail"
+          fullWidth
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        />
 
-        <label style={styles.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
+        <TextField
+          id="password"
+          label="Password"
+          variant="outlined"
+          margin="normal"
+          helperText="Please enter your password"
+          fullWidth
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+        />
 
-        <button type="submit">Зарегистрироваться</button>
-      </form>
+        <Button
+          disabled={!name || !email || !password}
+          variant="text"
+          type="submit"
+          sx={{
+            width: 100,
+          }}
+        >
+          sign up
+        </Button>
+      </Box>
     </Box>
   );
 };

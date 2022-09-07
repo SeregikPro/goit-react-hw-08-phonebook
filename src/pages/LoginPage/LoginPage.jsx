@@ -3,17 +3,19 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import Box from 'components/Box';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Button from '@mui/material/Button';
+import { TextField } from '@mui/material';
 
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+// const styles = {
+//   form: {
+//     width: 320,
+//   },
+//   label: {
+//     display: 'flex',
+//     flexDirection: 'column',
+//     marginBottom: 15,
+//   },
+// };
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -39,36 +41,57 @@ const LoginPage = () => {
   };
 
   return (
-    <Box>
+    <Box display="flex" justifyContent="center">
       <HelmetProvider>
         <Helmet>
           <title>Login page</title>
         </Helmet>
       </HelmetProvider>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
+      <Box
+        as="form"
+        display="flex"
+        alignItems="center"
+        flexDirection="column"
+        width="320px"
+        onSubmit={handleSubmit}
+        autoComplete="off"
+      >
+        <TextField
+          id="email"
+          label="E-mail"
+          variant="outlined"
+          margin="normal"
+          fullWidth
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        />
 
-        <label style={styles.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
+        <TextField
+          id="password"
+          label="Password"
+          variant="outlined"
+          margin="normal"
+          fullWidth
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+        />
 
-        <button type="submit">Войти</button>
-      </form>
+        <Button
+          disabled={!email || !password}
+          variant="text"
+          type="submit"
+          sx={{
+            width: 100,
+          }}
+        >
+          log in
+        </Button>
+      </Box>
     </Box>
   );
 };
