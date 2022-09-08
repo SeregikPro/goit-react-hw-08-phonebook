@@ -25,20 +25,20 @@ const ContactsPage = () => {
         </Helmet>
       </HelmetProvider>
 
-      <h1>Phonebook</h1>
       <Box
         width="300px"
         textAlign="center"
         border="normal"
         borderColor="accent"
-        borderRadius="normal"
+        borderRadius="20px"
         p={4}
+        m={16}
       >
         <ContactForm />
       </Box>
       {contacts.length > 0 ? (
-        <Box width="300px">
-          <h2>Contacts</h2>
+        <Box display="flex" flexDirection="column">
+          {/* <h2>Contacts</h2> */}
           <Filter />
           <ContactList />
         </Box>

@@ -10,6 +10,7 @@ import Box from 'components/Box';
 // import Button from 'components/Button';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -54,6 +55,7 @@ const ContactForm = () => {
     }
 
     const newContact = {
+      avatar: name,
       name,
       number,
     };

@@ -1,35 +1,32 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-
-const styles = {
-  container: {
-    minHeight: 'calc(100vh - 50px)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontWeight: 500,
-    fontSize: 48,
-    textAlign: 'center',
-  },
-};
+import Box from 'components/Box';
+import { AppName } from './HomePage.styled';
 
 const HomePage = () => {
   return (
-    <div style={styles.container}>
+    <Box display="flex" flexDirection="column" alignItems="center" p={5}>
       <HelmetProvider>
         <Helmet>
           <title>Home page</title>
         </Helmet>
       </HelmetProvider>
 
-      <h1 style={styles.title}>
-        Приветственная страница нашего сервиса{' '}
-        <span role="img" aria-label="Иконка приветствия">
-          💁‍♀️
-        </span>
-      </h1>
-    </div>
+      <Box
+        width="300px"
+        textAlign="center"
+        // border="normal"
+        bg="accent"
+        borderRadius="20px"
+        p={4}
+        m={16}
+      >
+        <AppName>Phonebook</AppName>
+      </Box>
+      <h2>
+        This small application allows you to save phone contacts, quickly find
+        and edit them. Have use and enjoy it!
+      </h2>
+    </Box>
   );
 };
 

@@ -16,7 +16,8 @@ export const List = styled.ul`
 export const Navlink = styled(NavLink)`
   text-decoration: none;
   font-size: 20px;
-  margin-left: 20px;
+  margin-right: 20px;
+
   cursor: pointer;
 
   &.active {

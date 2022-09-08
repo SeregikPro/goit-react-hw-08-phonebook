@@ -3,20 +3,16 @@ import Box from 'components/Box';
 import Navigation from 'components/Navigation';
 import UserMenu from 'components/UserMenu';
 import { useAuth } from 'hooks';
+import { Header } from './AppBar.styled';
 
 const AppBar = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <Box
-      as="header"
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-    >
+    <Header>
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </Box>
+    </Header>
   );
 };
 

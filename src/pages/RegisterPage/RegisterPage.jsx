@@ -80,7 +80,7 @@ const RegisterPage = () => {
           label="Password"
           variant="outlined"
           margin="normal"
-          helperText="Please enter your password"
+          helperText="Please enter password"
           fullWidth
           type="password"
           name="password"
