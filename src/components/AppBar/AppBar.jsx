@@ -1,5 +1,5 @@
 import AuthNav from 'components/AuthNav';
-import Box from 'components/Box';
+// import Box from 'components/Box';
 import Navigation from 'components/Navigation';
 import UserMenu from 'components/UserMenu';
 import { useAuth } from 'hooks';

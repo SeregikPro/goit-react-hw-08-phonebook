@@ -1,5 +1,5 @@
 import Box from 'components/Box';
-import { List, Navlink } from './Navigation.styled';
+import { Navlink } from './Navigation.styled';
 import { useAuth } from 'hooks';
 import { FcContacts, FcHome } from 'react-icons/fc';
 

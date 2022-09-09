@@ -6,11 +6,10 @@ import {
   getLoadingStatus,
 } from 'redux/contacts/contactsSelectors';
 import Box from 'components/Box';
-// import { Input, Title } from './ContactForm.styled';
-// import Button from 'components/Button';
+
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
+// import AddIcon from '@mui/icons-material/Add';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
