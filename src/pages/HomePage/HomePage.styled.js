@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Book = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 300px;
   height: 200px;
   display: flex;
@@ -16,5 +18,16 @@ export const Book = styled.div`
 `;
 
 export const AppName = styled.h1`
+  color: white;
+  margin: 16px;
+`;
+
+export const HelloText = styled.p`
+  font-size: ${p => p.theme.fontSizes.l};
+  color: ${p => p.theme.colors.primary};
+`;
+
+export const Text = styled.p`
+  font-size: ${p => p.theme.fontSizes.l};
   color: white;
 `;
