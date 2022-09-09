@@ -55,21 +55,6 @@ const ContactsList = () => {
         </tbody>
       </Table>
     </div>
-
-    // <Box display="flex" flexDirection="column" p="0px" as="ul">
-    //   {filteredContacts.map(({ id, avatar, name, number }) => {
-    //     return (
-    //       <ContactItem
-    //         key={id}
-    //         id={id}
-    //         avatar={avatar}
-    //         name={name}
-    //         number={number}
-    //         deleteContact={deleteContact}
-    //       />
-    //     );
-    //   })}
-    // </Box>
   );
 };
 

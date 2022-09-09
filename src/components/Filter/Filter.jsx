@@ -18,8 +18,6 @@ const Filter = () => {
       variant="standard"
       margin="normal"
       helperText="Type to search"
-      // fullWidth
-      // type="text"
       size="small"
       value={filter}
       onChange={handleFilter}

@@ -27,6 +27,7 @@ const ContactsPage = () => {
 
       <Box
         width="300px"
+        height="200px"
         textAlign="center"
         border="normal"
         borderColor="accent"
@@ -38,7 +39,6 @@ const ContactsPage = () => {
       </Box>
       {contacts.length > 0 ? (
         <Box display="flex" flexDirection="column">
-          {/* <h2>Contacts</h2> */}
           <Filter />
           <ContactList />
         </Box>

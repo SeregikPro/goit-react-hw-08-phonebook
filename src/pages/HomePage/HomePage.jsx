@@ -1,6 +1,7 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Box from 'components/Box';
-import { AppName } from './HomePage.styled';
+import { NavLink } from 'react-router-dom';
+import { Book, AppName } from './HomePage.styled';
 
 const HomePage = () => {
   return (
@@ -11,17 +12,12 @@ const HomePage = () => {
         </Helmet>
       </HelmetProvider>
 
-      <Box
-        width="300px"
-        textAlign="center"
-        // border="normal"
-        bg="accent"
-        borderRadius="20px"
-        p={4}
-        m={16}
-      >
-        <AppName>Phonebook</AppName>
-      </Box>
+      <NavLink to="/contacts">
+        <Book>
+          <AppName>Phonebook</AppName>
+        </Book>
+      </NavLink>
+
       <h2>
         This small application allows you to save phone contacts, quickly find
         and edit them. Have use and enjoy it!

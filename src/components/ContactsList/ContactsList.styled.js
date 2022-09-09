@@ -6,7 +6,6 @@ export const Table = styled.table`
   border-collapse: collapse;
   border-radius: 10px;
   overflow: hidden;
-  /* text-align: center; */
 
   tbody > tr:hover {
     background-color: #eeffee;
