@@ -6,17 +6,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
 
-// const styles = {
-//   form: {
-//     width: 320,
-//   },
-//   label: {
-//     display: 'flex',
-//     flexDirection: 'column',
-//     marginBottom: 15,
-//   },
-// };
-
 const LoginPage = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -41,7 +30,7 @@ const LoginPage = () => {
   };
 
   return (
-    <Box display="flex" justifyContent="center">
+    <Box display="flex" justifyContent="center" p={5}>
       <HelmetProvider>
         <Helmet>
           <title>Login page</title>

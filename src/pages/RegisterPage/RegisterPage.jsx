@@ -33,7 +33,7 @@ const RegisterPage = () => {
     setPassword('');
   };
   return (
-    <Box display="flex" justifyContent="center">
+    <Box display="flex" justifyContent="center" p={5}>
       <HelmetProvider>
         <Helmet>
           <title>Register page</title>
